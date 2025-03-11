@@ -1,0 +1,5 @@
+10002 donald champ 24.4 17.5
+10069 your mother 25 20
+10074 paul champ 32 17.5
+10123 sasha ellis 20 20.3
+10234 Josh King 40 17.5
