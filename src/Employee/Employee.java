@@ -54,14 +54,18 @@ public class Employee {
     }
 
     @Override
-    public String toString(){
-        String roundedSalary = String.format("%.2f", calculatedGrossSalary);
-        String roundedDeductions = String.format("%.2f", employeeDeductions);
-        String roundedNetPay = String.format("%.2f", calculatedGrossSalary - employeeDeductions);
+    public String toString() {
+        // Calculate net pay as a double value
+        double roundedNetPay = calculatedGrossSalary - employeeDeductions;
 
-
-        return  employeeNumber + "\t\t" + firstName.toUpperCase() + "\t\t" + lastName.toUpperCase() + "\t\t" + roundedSalary +
-                "\t\t" + roundedDeductions
-                + "\t\t" + roundedNetPay;
+        // Return formatted string
+        return String.format("%-15d %-15s %-15s %-15.2f %-15.2f %-15.2f",
+                employeeNumber,
+                firstName.toUpperCase(),
+                lastName.toUpperCase(),
+                calculatedGrossSalary,  // Assuming this is a double value
+                employeeDeductions,  // Assuming this is a double value
+                roundedNetPay);  // Now roundedNetPay is a double and can be formatted correctly
     }
+
 }
