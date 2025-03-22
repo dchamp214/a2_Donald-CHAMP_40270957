@@ -1,5 +1,4 @@
 10002 donald champ 24.4 17.5
-10069 your mother 25 20
 10074 paul champ 32 17.5
 102)3 Donald Champ 2$ 20
 10123 sasha ellis 20 20.3
@@ -9,3 +8,4 @@
 102)3 Donald Champ 2$ 20
 10235 Sophie Belanger 20 20
 10234 Joan Darcy 30 15
+12032 Luke Carter 40 20

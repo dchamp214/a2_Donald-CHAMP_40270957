@@ -3,6 +3,8 @@ package Employee;
 import Deductions.Deductions;
 
 public class Employee {
+
+    // Create employee variables
     private long employeeNumber;
     private String firstName;
     private String lastName;
@@ -11,6 +13,7 @@ public class Employee {
     private double calculatedGrossSalary;
     private double employeeDeductions;
 
+    // Default constructor sets all values to null or 0
     Employee(){
         this.employeeNumber = 0;
         this.firstName = null;
@@ -20,6 +23,7 @@ public class Employee {
         this.calculatedGrossSalary = 0;
     }
 
+    // Parameterized constructor sets all values to those provided
     public Employee(long employeeNumber, String firstName, String lastName, double hoursWorked, double hourlyWage){
         this.employeeNumber = employeeNumber;
         this.firstName = firstName;
@@ -29,6 +33,7 @@ public class Employee {
         this.calculatedGrossSalary = hourlyWage * hoursWorked * 52;
     }
 
+    // Copy constructor sets this. variables to same as copied object
     public Employee(Employee other) {
         this.employeeNumber = other.employeeNumber;
         this.firstName = other.firstName;
@@ -38,11 +43,15 @@ public class Employee {
         this.calculatedGrossSalary = other.calculatedGrossSalary;
     }
 
+    // Accessor method for gross salary
     public double getCalculatedGrossSalary() {
         return calculatedGrossSalary;
     }
 
+    // Method for calculating employess taxes
     public void getDeductions(){
+
+        // Creates deduction object for this employee
         Deductions deductions = new Deductions(this.calculatedGrossSalary) {
             @Override
             public double calculateTax(double grossSalary) {
@@ -50,12 +59,13 @@ public class Employee {
             }
         };
 
+        // Calls method that calculates total tax and sets it to this employees deductions variable
         this.employeeDeductions = deductions.totalDeductions(calculatedGrossSalary);
     }
 
     @Override
     public String toString() {
-        // Calculate net pay as a double value
+        // Calculate net pay
         double roundedNetPay = calculatedGrossSalary - employeeDeductions;
 
         // Return formatted string
